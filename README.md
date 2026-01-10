@@ -1,4 +1,4 @@
-# LLM Fine-Tuning — Practical Example
+# LLM Fine-Tuning - Practical Example
 
 This repository provides a practical and educational example of fine-tuning a Large Language Model (LLM) using instruction → input → output datasets. The goal is to demonstrate, in a simple and reproducible way, the complete workflow required to adapt a pre-trained language model to a specific task or domain.
 
@@ -30,3 +30,4 @@ The dataset follows the structure below:
   "output": "Overfitting occurs when a model..."
 }
 ```
+
