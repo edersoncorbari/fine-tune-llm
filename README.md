@@ -31,3 +31,4 @@ The dataset follows the structure below:
 }
 ```
 
+export HUGGINGFACE_TOKEN_GOOGLE_COLAB="xx"
