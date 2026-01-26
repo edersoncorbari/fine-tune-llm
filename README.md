@@ -71,4 +71,6 @@ During fine-tuning, training loss and output entropy were monitored to assess co
 
 These signals indicate a stable and successful fine-tuning process.
 
+> You can also inspect the CSV files in the metrics directory (train_loss.csv and train_entropy.csv) for detailed numerical tracking of the training process.
+
 
