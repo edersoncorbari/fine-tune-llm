@@ -49,3 +49,15 @@ The experiments are conducted using Jupyter notebooks, opened via VS Code 💻. 
 - Gemma-2b-it-Psych/ (training artifacts and logs)
 
 This workflow enables reproducible local experimentation and model fine-tuning 🧪.
+
+## 📊 Training Monitoring and Visualization 
+
+**TensorBoard** is used to monitor training metrics in real time, enabling continuous inspection of the optimization process. This includes tracking the training loss, observing convergence behavior, and identifying potential instabilities during fine-tuning.
+
+📈 Example TensorBoard Visualization
+
+Below is an example of the training loss curve visualized using TensorBoard during the fine-tuning process:
+
+![TensorBoard Training Example](imgs/tensorboard1.png)
+
+Figure 1: Training loss monitored via TensorBoard during fine-tuning of the Gemma-2B model.
