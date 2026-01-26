@@ -61,3 +61,14 @@ Below is an example of the training loss curve visualized using TensorBoard duri
 ![TensorBoard Training Example](imgs/tensorboard1.png)
 
 Figure 1: Training loss monitored via TensorBoard during fine-tuning of the Gemma-2B model.
+
+## 🧩 Training Metrics
+
+During fine-tuning, training loss and output entropy were monitored to assess convergence and stability.
+
+- Training loss decreased consistently, indicating effective optimization.
+- Output entropy showed a gradual decline, suggesting increased confidence without over-constraining the output distribution.
+
+These signals indicate a stable and successful fine-tuning process.
+
+
