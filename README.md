@@ -1,8 +1,11 @@
 # LLM Fine-Tuning - Practical Example
 
-This repository provides a practical and educational example of fine-tuning a Large Language Model (LLM) using instruction → input → output datasets. The goal is to demonstrate, in a simple and reproducible way, the complete workflow required to adapt a pre-trained language model to a specific task or domain.
+## 📚 Project Overview
 
-This project is intended for learning, experimentation, and proof-of-concept purposes, not for production use.
+This repository presents a practical and educational example of fine-tuning a Large Language Model (LLM) using datasets structured in the instruction → input → output format 🤖➡️📄➡️✅.
+The objective is to illustrate, in a clear and reproducible manner, the complete workflow required to adapt a pre-trained language model to a specific task or domain 🔬📊.
+
+🎓 This project is intended for academic purposes, including learning, experimentation, and concept validation (proof of concept). It is not recommended for production use 🚫🏭.
 
 ## 🎯 Objective
 
@@ -12,23 +15,37 @@ This project is intended for learning, experimentation, and proof-of-concept pur
 - Evaluate how fine-tuning changes model behavior
 - Serve as a baseline for experiments in different domains (e.g., healthcare, psychology, customer support)
 
-## 🧠 Model
+## 🧠 Model Architecture and Training Setup
 
-- Base model: {{model-name}} (e.g., LLaMA, Gemma, Mistral)
+- Base model: google/gemma-2b-it
 - Framework: Hugging Face Transformers
 - Training backend: PyTorch
-- Quantization (optional): bitsandbytes (4-bit / 8-bit)
+- Quantization: bitsandbytes (4-bit / 8-bit)
 
 ## 📊 Dataset
 
-The dataset follows the structure below:
+This work uses the [jkhedri/psychology-dataset](https://huggingface.co/datasets/jkhedri/psychology-dataset), a preference-based dataset containing paired psychological responses with contrasting interaction styles 🧠.
 
-```json
-{
-  "instruction": "Explain the concept of overfitting",
-  "input": "",
-  "output": "Overfitting occurs when a model..."
-}
+The dataset is shuffled at load time and supports a lightweight test mode via the DATA_SAMPLES parameter, enabling rapid validation prior to full-scale fine-tuning ⚡.
+
+A standardized chat template is applied to all splits to match the target model’s conversational format. Only the empathetic and therapeutically appropriate responses (response_j) are selected for training, while judgmental or aggressive alternatives (response_k) are explicitly excluded 🚫.
+
+This design ensures the model learns to produce safe, professional, and supportive psychological guidance.
+
+## 🔧 Local Training Setup and Execution
+
+To perform local fine-tuning, the project repository (**fine-tune-llm**) is accessed and the Python environment is initialized using [Poetry](https://python-poetry.org/) 📦.
+
+The setup procedure consists of activating the virtual environment and installing all dependencies:
+
+```bash
+poetry shell && poetry install
 ```
 
-export HUGGINGFACE_TOKEN_GOOGLE_COLAB="xx"
+The experiments are conducted using Jupyter notebooks, opened via VS Code 💻. The **notebooks/** directory contains inference and fine-tuning notebooks, as well as the output directory used during training:
+
+- 01_GEMMA2B_QUICK_INFERENCE.ipynb
+- 02_GEMMA2B_FINE_TUNING.ipynb
+- Gemma-2b-it-Psych/ (training artifacts and logs)
+
+This workflow enables reproducible local experimentation and model fine-tuning 🧪.
