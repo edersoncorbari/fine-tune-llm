@@ -44,9 +44,12 @@ poetry shell && poetry install
 
 The experiments are conducted using Jupyter notebooks, opened via VS Code 💻. The **notebooks/** directory contains inference and fine-tuning notebooks, as well as the output directory used during training:
 
-- 01_GEMMA2B_QUICK_INFERENCE.ipynb
-- 02_GEMMA2B_FINE_TUNING.ipynb
-- Gemma-2b-it-Psych/ (training artifacts and logs)
+- `01_GEMMA2B_QUICK_INFERENCE.ipynb`
+- `02_GEMMA2B_FINE_TUNING.ipynb`
+- `03_GEMMA2B_MERGE_LORA.ipynb`
+- `04_GEMMA2B_GGUF.ipynb`
+- `Gemma-2b-it-Psych/ (training artifacts and logs)`
+- `Gemma-2b-it-Psych-Merged/ (merged model + LoRA)`
 
 This workflow enables reproducible local experimentation and model fine-tuning 🧪.
 
@@ -161,3 +164,4 @@ This repository provides quantized GGUF variants of the merged model, optimized 
   - Fast prototyping and demos
  
 > This variant enables practical usage without requiring GPU acceleration.
+
