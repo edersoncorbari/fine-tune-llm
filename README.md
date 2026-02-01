@@ -100,3 +100,27 @@ All metrics were logged using TensorBoard, allowing real-time inspection of trai
 This setup enables transparent evaluation and facilitates comparison across future experiments.
 
 > While quantitative metrics indicate strong convergence, qualitative evaluation remains essential for assessing safety, empathy, and clinical appropriateness of generated responses.
+
+## 🧬 Model Release Pipeline
+
+This project produces multiple model artifacts corresponding to different stages of the fine-tuning and deployment pipeline.
+Each repository serves a specific purpose and targets a distinct use case.
+
+1️⃣ Fine-Tuned Model (**LoRA** Adapters)
+
+Repository:
+
+👉 [ecorbari/Gemma-2b-it-Psych](https://huggingface.co/ecorbari/Gemma-2b-it-Psych)
+
+This repository contains the **fine-tuned LoRA adapters** trained on the psychology instruction dataset.
+
+- Base model: google/gemma-2b-it
+- Fine-tuning method: LoRA / QLoRA
+- Format: PEFT adapters
+- Intended use:
+  - Research and experimentation
+  - Further fine-tuning
+
+Adapter merging or comparison studies
+
+⚠️ This repository does not include merged model weights and requires the base model to be loaded at inference time.
