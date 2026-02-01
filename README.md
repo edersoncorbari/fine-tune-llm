@@ -106,11 +106,11 @@ This setup enables transparent evaluation and facilitates comparison across futu
 This project produces multiple model artifacts corresponding to different stages of the fine-tuning and deployment pipeline.
 Each repository serves a specific purpose and targets a distinct use case.
 
-1️⃣ Fine-Tuned Model (**LoRA** Adapters)
+1️⃣ **Fine-Tuned Model (LoRA Adapters)**
 
 Repository:
 
-👉 [ecorbari/Gemma-2b-it-Psych](https://huggingface.co/ecorbari/Gemma-2b-it-Psych)
+- 👉 [ecorbari/Gemma-2b-it-Psych](https://huggingface.co/ecorbari/Gemma-2b-it-Psych)
 
 This repository contains the **fine-tuned LoRA adapters** trained on the psychology instruction dataset.
 
@@ -121,12 +121,13 @@ This repository contains the **fine-tuned LoRA adapters** trained on the psychol
   - Research and experimentation
   - Further fine-tuning
 
-⚠️ This repository does not include merged model weights and requires the base model to be loaded at inference time.
+> This repository does not include merged model weights and requires the base model to be loaded at inference time.
 
-2️⃣ Merged Model (Base + LoRA)
+2️⃣ **Merged Model (Base + LoRA)**
 
 Repository:
-👉 [ecorbari/Gemma-2b-it-Psych-Merged](https://huggingface.co/ecorbari/Gemma-2b-it-Psych-Merged)
+
+- 👉 [ecorbari/Gemma-2b-it-Psych-Merged](https://huggingface.co/ecorbari/Gemma-2b-it-Psych-Merged)
 
 This repository contains the **merged model weights**, obtained by merging the **LoRA adapters** into the base **Gemma-2B** model.
 
@@ -138,4 +139,25 @@ This repository contains the **merged model weights**, obtained by merging the *
   - Evaluation and benchmarking
   - Downstream integration
 
-This variant simplifies deployment while preserving the fine-tuned behavior learned during adapter-based training.
+> This variant simplifies deployment while preserving the fine-tuned behavior learned during adapter-based training.
+
+3️⃣ **Quantized Model (GGUF)**
+
+Repository:
+
+- 👉 [ecorbari/Gemma-2b-it-Psych-GGUF](https://huggingface.co/ecorbari/Gemma-2b-it-Psych-GGUF)
+
+This repository provides quantized GGUF variants of the merged model, optimized for efficient local inference.
+
+- Format: GGUF
+- Quantization levels: (e.g., Q4_K_M, Q5_K_M, Q8_0 - adjust if needed)
+- Compatible with:
+  - llama.cpp
+  - ollama
+  - other GGUF-based runtimes
+- Intended use:
+  - Local inference on CPU
+  - Resource-constrained environments
+  - Fast prototyping and demos
+ 
+> This variant enables practical usage without requiring GPU acceleration.
