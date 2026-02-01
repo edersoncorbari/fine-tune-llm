@@ -62,15 +62,41 @@ Below is an example of the training loss curve visualized using TensorBoard duri
 
 Figure 1: Training loss monitored via TensorBoard during fine-tuning of the Gemma-2B model.
 
-## 🧩 Training Metrics
+## 🧩 Training Metrics and Evaluation
 
-During fine-tuning, training loss and output entropy were monitored to assess convergence and stability.
+During fine-tuning, both **training loss** and **evaluation loss** were monitored to assess convergence, generalization, and training stability.
 
-- Training loss decreased consistently, indicating effective optimization.
-- Output entropy showed a gradual decline, suggesting increased confidence without over-constraining the output distribution.
+- **Training loss** decreased smoothly from ~3.36 to ~0.55, indicating effective domain adaptation from the pre-trained checkpoint.
+- **Evaluation loss** closely tracked the training loss, stabilizing in the range of 0.60–0.70, with no upward trend observed.
+- The small gap between training and evaluation loss suggests good generalization and no evidence of overfitting.
 
-These signals indicate a stable and successful fine-tuning process.
+### 📉 Loss Overview
 
-> You can also inspect the CSV files in the metrics directory (train_loss.csv and train_entropy.csv) for detailed numerical tracking of the training process.
+| Metric | Value (approx.) |
+| :--- | :--- |
+| Final train loss | ~0.55 |
+| Final eval loss | ~0.60–0.70 |
 
+### 🔢 Perplexity (Derived Metric)
 
+For autoregressive language models, perplexity is a more meaningful indicator of performance than traditional accuracy metrics. Perplexity is computed as the exponential of the cross-entropy loss:
+
+$$Perplexity = \exp(\text{loss})$$
+
+Based on the observed evaluation loss:
+
+- Eval loss ≈ 0.60 → Perplexity ≈ 1.82
+- Eval loss ≈ 0.70 → Perplexity ≈ 2.01
+
+These values indicate that the model is highly confident in predicting the next token within the target domain, which is expected for a well-converged, domain-specific fine-tuning setup.
+
+### 📊 Monitoring and Reproducibility
+
+All metrics were logged using TensorBoard, allowing real-time inspection of training dynamics. Additionally, raw metric values were exported as CSV files for reproducibility and offline analysis:
+
+- [train_loss.csv](metrics/eval_loss_runs_Jan25_11-37-37_precision3680.csv)
+- [eval_loss.csv](metrics/train_loss_runs_Jan25_11-37-37_precision3680.csv)
+
+This setup enables transparent evaluation and facilitates comparison across future experiments.
+
+> While quantitative metrics indicate strong convergence, qualitative evaluation remains essential for assessing safety, empathy, and clinical appropriateness of generated responses.
