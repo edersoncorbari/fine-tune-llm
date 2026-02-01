@@ -121,6 +121,21 @@ This repository contains the **fine-tuned LoRA adapters** trained on the psychol
   - Research and experimentation
   - Further fine-tuning
 
-Adapter merging or comparison studies
-
 ⚠️ This repository does not include merged model weights and requires the base model to be loaded at inference time.
+
+2️⃣ Merged Model (Base + LoRA)
+
+Repository:
+👉 [ecorbari/Gemma-2b-it-Psych-Merged](https://huggingface.co/ecorbari/Gemma-2b-it-Psych-Merged)
+
+This repository contains the **merged model weights**, obtained by merging the **LoRA adapters** into the base **Gemma-2B** model.
+
+- LoRA adapters merged into base weights
+- No external adapters required at inference
+- Fully self-contained Hugging Face model
+- Intended use:
+  - Standard Transformers inference
+  - Evaluation and benchmarking
+  - Downstream integration
+
+This variant simplifies deployment while preserving the fine-tuned behavior learned during adapter-based training.
