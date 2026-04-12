@@ -7,6 +7,12 @@ The objective is to illustrate, in a clear and reproducible manner, the complete
 
 🎓 This project is intended for academic purposes, including learning, experimentation, and concept validation (proof of concept). It is not recommended for production use 🚫🏭.
 
+## 📝 Full Article
+
+For a complete walkthrough and deeper explanation, read the article on Medium:
+
+👉 [Beyond Helpfulness: Specialized Fine-Tuning for Empathetic AI with Gemma 2B and QLoRA](https://medium.com/@ecorbari/beyond-helpfulness-specialized-fine-tuning-for-empathetic-ai-with-gemma-2b-and-qlora-afcb08dea000)
+
 ## 🎯 Objective
 
 - Demonstrate how to fine-tune a pre-trained LLM
